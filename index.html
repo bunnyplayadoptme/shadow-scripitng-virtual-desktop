@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shadow scripting virtual Desktop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="desktop">
+    <div class="icon" onclick="openApp('AppStore')">🛒 App Store</div>
+  </div>
+
+  <div id="taskbar">
+    <span class="taskbar-title">ShadowOS</span>
+  </div>
+
+  <!-- App Store -->
+  <div class="window" id="AppStore">
+    <div class="title-bar">
+      <span>App Store</span>
+      <button onclick="closeWindow('AppStore')">X</button>
+    </div>
+    <div class="window-content">
+      <h3>Available Apps</h3>
+      <button onclick="installApp('Chrome')">Install Chrome</button>
+      <button onclick="installApp('Roblox Executor')">Install Executor</button>
+    </div>
+  </div>
+
+  <!-- Roblox Executor -->
+  <div class="window" id="RobloxExecutor" style="display:none; top: 150px; left: 150px;">
+    <div class="title-bar">
+      <span>Roblox Executor</span>
+      <button onclick="closeWindow('RobloxExecutor')">X</button>
+    </div>
+    <div class="window-content">
+      <textarea id="luaCode" placeholder="Enter Lua code here..."></textarea>
+      <button onclick="executeLua()">Run</button>
+      <div id="output"></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
